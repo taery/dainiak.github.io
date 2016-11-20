@@ -1,0 +1,69 @@
+%This document is in UTF-8 encoding 
+%Этот документ должен скомпилироваться стандартной связкой pdfLaTex+MakeIndex+BibTeX
+\documentclass[russian,a4paper,12pt]{article}
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{nopageno}
+
+\usepackage[
+    draft=false,
+    pdftex=true,
+    unicode=true,
+    linkcolor=blue,
+    raiselinks=true,
+    urlcolor=blue,
+    colorlinks=true,
+    hyperfootnotes=true,
+    pdfauthor={Alex\ Dainiak},
+    pdftitle={Homework}
+]{hyperref}
+
+\usepackage[
+    left=15mm,
+    right=15mm,
+    top=15mm,
+    bottom=15mm,
+    bindingoffset=0cm
+]{geometry}
+
+\newcommand{\Sum}{\displaystyle\sum\limits}
+\newcommand{\Max}{\max\limits}
+\newcommand{\Min}{\min\limits}
+\newcommand{\const}{{\mathrm{const}}}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\tild}{\widetilde}
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil{#1}\right\rceil}
+\newcommand{\ol}{\overline}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}{\hbox{$#1$}}{}}
+
+\DeclareMathOperator{\tr}{tr}
+
+\nofiles
+\begin{document}
+\centerline{\bf \href{http://www.dainiak.com}{\underline{Дискретная оптимизация. Весна 2013.}}}\bigskip
+{\bf Задание по первой лекции. Крайний срок сдачи: 3 марта, 23:59MSK.} Для зачёта по заданию нужно набрать в сумме хотя бы $9$ баллов. Любые вопросы задавайте по почте.
+\begin{enumerate}
+\item Поставьте формально задачу оптимизации (укажите множество $S$ и функцию $f$) для следующей содержательной задачи:
+    \begin{enumerate}
+    \item (2 балла) Есть несколько контейнеров различного объёма и веса. Требуется выбрать из них несколько контейнеров так, чтобы они влезли в грузовик фиксированной вместительности, а суммарный вес их был как можно больше.
+    \item (2 балла) Есть несколько городов, изначально не соединённых дорогами. Известна стоимость прокладки пути между любой парой городов. Нужно определить, между какими из городов нужно проложить дороги, так, чтобы из любого города в любой другой можно было доехать (возможно, через другие города). Хочется потратить на строительство как можно меньше денег из федерального бюджета.
+    \item (2 балла) Та же задача, что в предыдущем пункте, но требуется дополнительно, чтобы возможность доехать из любого города в любой сохранялась даже в случае, когда одна из дорог между произвольной парой городов закрывается на ремонт.
+    \end{enumerate}
+\item (2 балла) Приведите пример какой-нибудь окрестностной функции для задачи о назначениях.
+
+\item Определим $k$-окрестность гамильтонова цикла~$C$ в графе как множество всех циклов, которые можно получить удалением $k$~рёбер из~$C$ и добавлением других $k$~рёбер. На лекции было показано, что рассмотрение $2$-окрестностей не гарантирует достижение глобального оптимума в задаче коммивояжёра при локальном поиске. Покажите то же для $k$-окрестностей при
+    \begin{enumerate}
+    \item (2 балла) $k=3$,
+    \item (4 балла) $k\le n-3$, где $n$ --- количество вершин в графе.
+    \end{enumerate}
+\item (4 балла) Докажите, что для любых двух гамильтоновых циклов~$C',\,C''$ в полном графе можно найти последовательность гамильтоновых циклов $C_1,\,C_2,\,\ldots,\,C_k$, такую, что $C_1\hm=C'$, $C_k=C''$, и для каждого~$i$ цикл~$C_{i+1}$ принадлежит $2$-окрестности цикла~$C_i$. То есть рассмотренная на лекции окрестностная функция полна.
+\end{enumerate}
+\end{document}
